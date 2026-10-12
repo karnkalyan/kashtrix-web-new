@@ -2,8 +2,10 @@ node_modules
 .next
 .git
 .github
+.env
 .env.local
 .env*.local
+old-website-oss-bss
 *.log
 npm-debug.log*
 .DS_Store
