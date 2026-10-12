@@ -1,0 +1,395 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model auditlog {
+  id        String        @id
+  userId    Int?
+  action    String
+  targetId  String?
+  type      auditlog_type
+  details   String?       @db.Text
+  ipAddress String?
+  createdAt DateTime      @default(now())
+
+  @@index([userId], map: "AuditLog_userId_fkey")
+}
+
+model connectionlog {
+  id        String   @id
+  deviceId  Int
+  event     String
+  details   String?  @db.Text
+  createdAt DateTime @default(now())
+
+  @@index([deviceId, createdAt], map: "ConnectionLog_deviceId_createdAt_idx")
+}
+
+model device {
+  id          Int           @id @default(autoincrement())
+  hwid        String        @unique(map: "Device_hwid_key")
+  name        String?
+  isActivated Boolean       @default(false)
+  streamUrl   String?       @db.Text
+  status      device_status @default(OFFLINE)
+  lastSeen    DateTime      @default(now())
+  model       String?
+  brand       String?
+  osVersion   String?
+  appVersion  String?
+  ipAddress   String?
+  sdkVersion  Int?
+  screenRes   String?
+  userId      Int?
+  groupId     Int?
+  channelId   Int?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime
+
+  @@index([channelId], map: "Device_channelId_fkey")
+  @@index([groupId], map: "Device_groupId_fkey")
+  @@index([status], map: "Device_status_idx")
+  @@index([userId], map: "Device_userId_fkey")
+}
+
+model devicegroup {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?  @db.Text
+  userId      Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime
+
+  @@unique([userId, name], map: "DeviceGroup_userId_name_key")
+}
+
+model epgprogram {
+  id          Int      @id @default(autoincrement())
+  channelId   String
+  title       String
+  description String?  @db.Text
+  startTime   DateTime
+  endTime     DateTime
+  status      String   @default("imported")
+  createdAt   DateTime @default(now())
+}
+
+model kvstore {
+  key       String   @id
+  value     String   @db.Text
+  updatedAt DateTime @default(now())
+}
+
+model muxconfiguration {
+  id        String   @id
+  name      String
+  data      String   @db.LongText
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
+model recordingpreset {
+  id                String   @id
+  name              String
+  sourceType        String   @default("device")
+  videoDevice       String?  @db.Text
+  audioDevice       String?  @db.Text
+  selectedStreamKey String?  @db.Text
+  configJson        String   @db.LongText
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime
+}
+
+model series {
+  id           Int      @id @default(autoincrement())
+  title        String
+  posterUrl    String?  @db.Text
+  seasonsCount Int      @default(1)
+  episodeCount Int      @default(0)
+  status       String   @default("published")
+  createdAt    DateTime @default(now())
+}
+
+model streamchannel {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique(map: "StreamChannel_name_key")
+  streamUrl   String   @db.Text
+  type        String?
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime
+}
+
+model streamrecording {
+  id           Int       @id @default(autoincrement())
+  app          String
+  stream       String
+  filePath     String    @db.Text
+  fileName     String
+  startTime    DateTime  @default(now())
+  endTime      DateTime?
+  size         BigInt    @default(0)
+  format       String    @default("mp4")
+  videoBitrate Int       @default(0)
+  audioBitrate Int       @default(0)
+  encoder      String    @default("copy")
+  resolution   String?
+  continuous   Boolean   @default(false)
+  sourceType   String    @default("ingest")
+  settingsJson String?   @db.Text
+  duration     Float     @default(0)
+}
+
+model streamsession {
+  id            Int       @id @default(autoincrement())
+  app           String
+  stream        String
+  startTime     DateTime  @default(now())
+  endTime       DateTime?
+  maxViewers    Int       @default(0)
+  totalBytes    BigInt    @default(0)
+  outgoingBytes BigInt    @default(0)
+  videoInfo     String?   @db.Text
+  audioInfo     String?   @db.Text
+}
+
+model subscriptionpackage {
+  id           Int      @id @default(autoincrement())
+  name         String
+  price        Float    @default(0)
+  durationDays Int      @default(30)
+  deviceLimit  Int      @default(5)
+  maxStreams   Int      @default(1)
+  status       String   @default("active")
+  createdAt    DateTime @default(now())
+}
+
+model systemconfiguration {
+  key       String   @id
+  section   String
+  value     String   @db.LongText
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+
+  @@index([section], map: "SystemConfiguration_section_idx")
+}
+
+model transcodechannel {
+  id        String   @id
+  name      String
+  data      String   @db.Text
+  status    String   @default("Stopped")
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
+model transcodeprofile {
+  id        String   @id
+  name      String
+  data      String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
+model user {
+  id                Int               @id @default(autoincrement())
+  email             String            @unique(map: "User_email_key")
+  username          String?           @unique(map: "User_username_key")
+  passwordHash      String
+  firstName         String?
+  lastName          String?
+  role              user_role         @default(USER)
+  subscription      user_subscription @default(FREE)
+  maxDevicesAllowed Int               @default(5)
+  isActive          Boolean           @default(true)
+  lastLogin         DateTime?
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime
+}
+
+model vodcontent {
+  id               Int      @id @default(autoincrement())
+  title            String
+  fileName         String
+  fileSize         BigInt   @default(0)
+  genre            String?
+  releaseYear      Int?
+  duration         Int?
+  status           String   @default("published")
+  posterUrl        String?  @db.Text
+  encodingProgress Int      @default(100)
+  createdAt        DateTime @default(now())
+}
+
+enum auditlog_type {
+  AUTH
+  CONNECTION
+  PLAYBACK_ERROR
+  SYSTEM
+}
+
+enum device_status {
+  OFFLINE
+  IDLE
+  PLAYING
+  BUFFERING
+  ERROR
+  MAINTENANCE
+}
+
+enum user_role {
+  SUPER_ADMIN
+  ADMIN
+  USER
+}
+
+enum user_subscription {
+  FREE
+  BASIC
+  PRO
+  ENTERPRISE
+}
+
+model ContactInquiry {
+  id            Int      @id @default(autoincrement())
+  name          String
+  company       String
+  email         String
+  phone         String?
+  product       String   @default("Broadcast Playout Suite")
+  message       String   @db.Text
+  consent       Boolean  @default(true)
+  status        String   @default("NEW") // NEW, IN_REVIEW, CONTACTED, RESOLVED, ARCHIVED
+  mode          String   @default("contact") // contact, demo
+  autoReplied   Boolean  @default(false)
+  notifiedAdmin Boolean  @default(false)
+  isRead        Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([email])
+  @@index([status])
+  @@index([isRead])
+  @@index([createdAt])
+}
+
+model EmailSetting {
+  id                    Int      @id @default(1)
+  smtpHost              String   @default("s11638.sgp1.stableserver.net")
+  smtpPort              Int      @default(465)
+  smtpSecure            Boolean  @default(true)
+  smtpUser              String   @default("support@kashtrix.com")
+  smtpPassword          String   @default("@@support@@kashtrix")
+  fromEmail             String   @default("support@kashtrix.com")
+  fromName              String   @default("Kashtrix Broadcast Systems")
+  notificationRecipient String   @default("support@kashtrix.com")
+  autoReplyEnabled      Boolean  @default(true)
+  autoReplySubject      String   @default("Thank you for contacting Kashtrix — We received your inquiry")
+  updatedAt             DateTime @updatedAt
+}
+
+model WebsiteContact {
+  id           Int      @id @default(1)
+  primaryEmail String   @default("support@kashtrix.com")
+  salesEmail   String   @default("support@kashtrix.com")
+  supportEmail String   @default("support@kashtrix.com")
+  phone        String   @default("+977 1 4500000")
+  whatsapp     String   @default("+977 9800000000")
+  address      String   @default("Kashtrix Broadcast Systems HQ")
+  websiteUrl   String   @default("https://kashtrix.com")
+  updatedAt    DateTime @updatedAt
+}
+
+model AiKnowledge {
+  id        Int      @id @default(autoincrement())
+  category  String   @default("Broadcast Playout")
+  title     String
+  content   String   @db.Text
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([category])
+  @@index([isActive])
+}
+
+model AiSetting {
+  id           Int      @id @default(1)
+  geminiApiKey String   @default("")
+  modelName    String   @default("gemini-2.0-flash")
+  systemPrompt String   @db.Text
+  temperature  Float    @default(0.2)
+  welcomeMsg   String   @default("Hello! I am the Kashtrix AI Engineering Copilot. How can I help you evaluate our Broadcast Playout, StreamOps, Studio, or Telecom OSS/BSS solutions today?")
+  updatedAt    DateTime @updatedAt
+}
+
+model ThemeSetting {
+  id            Int      @id @default(1)
+  primaryColor  String   @default("#4b1b63")
+  accentColor   String   @default("#6f2b8f")
+  gradientStart String   @default("#ec1778")
+  gradientEnd   String   @default("#4b1b63")
+  defaultTheme  String   @default("dark")
+  updatedAt     DateTime @updatedAt
+}
+
+model SentEmail {
+  id        Int      @id @default(autoincrement())
+  to        String
+  cc        String?
+  subject   String
+  body      String   @db.Text
+  sentBy    String   @default("support@kashtrix.com")
+  messageId String?
+  status    String   @default("SENT")
+  createdAt DateTime @default(now())
+
+  @@index([to])
+  @@index([createdAt])
+}
+
+model ChatSession {
+  id              String        @id @default(uuid())
+  sessionId       String        @unique
+  userName        String?
+  userEmail       String?
+  userPhone       String?
+  company         String?
+  status          String        @default("ACTIVE") // ACTIVE, ESCALATED, RESOLVED, ENDED
+  mode            String        @default("AI") // AI, LIVE_STAFF
+  staffJoined     Boolean       @default(false)
+  staffName       String?
+  lastActiveAt    DateTime      @default(now())
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  endedAt         DateTime?
+  summary         String?       @db.Text
+  escalatedReason String?       @db.Text
+  messages        ChatMessage[]
+
+  @@index([userEmail])
+  @@index([userPhone])
+  @@index([status])
+  @@index([mode])
+  @@index([createdAt])
+}
+
+model ChatMessage {
+  id         Int         @id @default(autoincrement())
+  sessionId  String
+  session    ChatSession @relation(fields: [sessionId], references: [sessionId], onDelete: Cascade)
+  sender     String      // user, assistant, staff, system
+  senderName String?
+  text       String      @db.Text
+  createdAt  DateTime    @default(now())
+
+  @@index([sessionId])
+  @@index([createdAt])
+}
+
+

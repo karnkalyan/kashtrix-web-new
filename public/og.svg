@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2B0D3A"/><stop offset=".55" stop-color="#4A1B7A"/><stop offset="1" stop-color="#E11D72"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="#faf8fc"/><circle cx="980" cy="110" r="360" fill="url(#g)" opacity=".13"/><circle cx="130" cy="590" r="300" fill="#7c3aed" opacity=".08"/>
+  <text x="88" y="200" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#4A1B7A" letter-spacing="6">KASHTRIX</text>
+  <text x="88" y="310" font-family="Arial, sans-serif" font-size="72" font-weight="800" fill="#160D20">Software for networks</text>
+  <text x="88" y="390" font-family="Arial, sans-serif" font-size="72" font-weight="800" fill="#160D20">that never stop.</text>
+  <text x="88" y="485" font-family="Arial, sans-serif" font-size="28" fill="#6E6578">Broadcast Playout · StreamOps · Telecom OSS/BSS</text>
+</svg>

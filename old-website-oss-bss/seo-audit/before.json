@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-08-10T01:21:35.000Z",
+  "baseline": {
+    "framework": "Next.js 16.2.6 (App Router)",
+    "branch": "feat/seo-audit",
+    "commit": "f89f34d4b8385d63ad65994593267357f0be44b2",
+    "totalRoutes": 39,
+    "missingSitemapRoutes": [
+      "solutions/fiber-gis-olt-ont-splitter",
+      "solutions/isp-field-staff-gps",
+      "solutions/isp-branch-reseller-management",
+      "compare/kashtrix-vs-splynx"
+    ],
+    "passedInitialTests": 20,
+    "failedInitialTests": 19,
+    "issuesIdentified": [
+      "Missing landing pages referenced in sitemap causing 404 links",
+      "Multiple H1 tags on platform and security pages",
+      "Homepage H1 text alignment needed for primary search intent",
+      "Missing dedicated comparison matrix page for competitor searches"
+    ]
+  }
+}

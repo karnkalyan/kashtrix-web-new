@@ -1,0 +1,32 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: kashtrix-website
+    restart: unless-stopped
+    init: true
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      PORT: "3077"
+      HOSTNAME: 0.0.0.0
+      DATABASE_URL: "mysql://root:quantumSql%40123@host.docker.internal:3306/kashtrix_db"
+      ADMIN_KEY: "kashtrix-admin"
+    ports:
+      - "3077:3077"
+      - "3001:3001"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    volumes:
+      - app_uploads:/app/public/uploads
+    healthcheck:
+      test: [ "CMD", "node", "-e", "fetch('http://127.0.0.1:3077/').then((r) => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))" ]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+volumes:
+  app_uploads:

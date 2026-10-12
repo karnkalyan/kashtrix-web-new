@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f8f7fa">
+  <meta name="description" content="Kashtrix, the AI-native telecom OSS/BSS and automation platform, launches July 31, 2026.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <link rel="canonical" href="https://kashtrix.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kashtrix launches July 31, 2026">
+  <meta property="og:description" content="One intelligent platform for telecom operations, business systems, automation, and AI agents.">
+  <meta property="og:url" content="https://kashtrix.com/">
+  <meta property="og:site_name" content="Kashtrix">
+  <meta name="twitter:card" content="summary">
+  <title>Kashtrix — Launching July 31, 2026</title>
+  <style>
+    :root {
+      --plum:#2b0d3a;
+      --purple:#4a1b7a;
+      --soft:#76549a;
+      --pink:#e11d72;
+      --ink:#1b1024;
+      --muted:#6f6078;
+      --mist:#e8dff0;
+      --lavender:#f4eeff;
+      --cloud:#f8f7fa;
+      --white:#fff;
+    }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      min-height:100vh;
+      overflow-x:hidden;
+      color:var(--ink);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 82% 10%,rgba(225,29,114,.08),transparent 28%),
+        radial-gradient(circle at 8% 92%,rgba(74,27,122,.10),transparent 34%),
+        linear-gradient(145deg,#fff 0%,var(--cloud) 52%,var(--lavender) 100%);
+    }
+
+    a { color:inherit; }
+    button,input { font:inherit; }
+    .page { position:relative; min-height:100svh; isolation:isolate; overflow:hidden; }
+    #particles { position:absolute; inset:0; z-index:-3; width:100%; height:100%; pointer-events:none; }
+    .glow { position:absolute; z-index:-2; border-radius:50%; filter:blur(90px); pointer-events:none; opacity:.42; animation:float 12s ease-in-out infinite; }
+    .glow-a { width:360px; height:360px; right:-130px; top:7%; background:rgba(225,29,114,.16); }
+    .glow-b { width:420px; height:420px; left:-180px; bottom:-120px; background:rgba(74,27,122,.15); animation-delay:-5s; }
+    .glow-c { width:240px; height:240px; left:48%; top:40%; background:rgba(118,84,154,.08); animation-delay:-8s; }
+    @keyframes float { 50% { transform:translateY(-22px) scale(1.05); } }
+
+    .shell { width:min(1180px,calc(100% - 40px)); margin-inline:auto; }
+    .topbar { min-height:88px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:inline-flex; align-items:center; text-decoration:none; }
+    .brand-logo { display:block; width:250px; height:auto; }
+    .launch-status { display:inline-flex; align-items:center; gap:10px; padding:10px 15px; border:1px solid rgba(74,27,122,.14); border-radius:999px; background:rgba(255,255,255,.70); box-shadow:0 8px 28px rgba(43,13,58,.05); backdrop-filter:blur(16px); color:var(--purple); font-size:12px; font-weight:750; }
+    .launch-status::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--pink); box-shadow:0 0 0 5px rgba(225,29,114,.10); animation:pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse { 50% { box-shadow:0 0 0 9px rgba(225,29,114,0); } }
+
+    .hero { min-height:calc(100svh - 150px); display:flex; align-items:center; justify-content:center; padding:54px 0 78px; text-align:center; }
+    .hero-inner { width:min(930px,100%); }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; padding:9px 14px; border:1px solid rgba(225,29,114,.20); border-radius:999px; background:rgba(255,255,255,.68); backdrop-filter:blur(14px); color:var(--plum); font-size:12px; font-weight:800; letter-spacing:.04em; }
+    .eyebrow b { color:var(--pink); font-size:15px; }
+    h1 { margin:25px auto 20px; max-width:900px; color:var(--plum); font-size:clamp(44px,7vw,84px); line-height:.99; letter-spacing:-.06em; }
+    h1 span { display:block; color:var(--pink); }
+    .lead { max-width:720px; margin:0 auto; color:var(--muted); font-size:clamp(16px,1.8vw,20px); line-height:1.72; }
+
+    .launch-date { display:flex; align-items:center; justify-content:center; gap:11px; margin:26px auto 0; color:var(--plum); font-size:13px; font-weight:800; letter-spacing:.07em; text-transform:uppercase; }
+    .launch-date i { width:34px; height:1px; background:linear-gradient(90deg,transparent,var(--soft)); }
+    .launch-date i:last-child { transform:rotate(180deg); }
+
+    .countdown { display:grid; grid-template-columns:repeat(4,minmax(110px,1fr)); gap:12px; width:min(620px,100%); margin:35px auto 0; }
+    .time { position:relative; overflow:hidden; min-height:112px; padding:21px 12px 18px; border:1px solid rgba(74,27,122,.13); border-radius:18px; background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(255,255,255,.60)); box-shadow:0 18px 55px rgba(43,13,58,.07); backdrop-filter:blur(18px); }
+    .time::after { content:""; position:absolute; left:18%; right:18%; bottom:0; height:2px; background:linear-gradient(90deg,transparent,var(--pink),transparent); opacity:.4; }
+    .time strong { display:block; color:var(--plum); font-size:clamp(28px,4vw,40px); line-height:1; font-variant-numeric:tabular-nums; letter-spacing:-.05em; }
+    .time span { display:block; margin-top:12px; color:var(--muted); font-size:10px; font-weight:800; letter-spacing:.15em; text-transform:uppercase; }
+
+    .actions { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px; margin-top:30px; }
+    .btn { min-height:49px; display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:0 20px; border-radius:12px; text-decoration:none; font-size:14px; font-weight:800; transition:transform .2s ease,background .2s ease,border-color .2s ease; }
+    .btn:hover { transform:translateY(-2px); }
+    .primary { background:var(--plum); color:#fff; box-shadow:0 15px 38px rgba(43,13,58,.20); }
+    .primary:hover { background:var(--purple); }
+    .secondary { border:1px solid rgba(74,27,122,.18); background:rgba(255,255,255,.72); color:var(--plum); backdrop-filter:blur(14px); }
+    .secondary:hover { border-color:var(--purple); background:#fff; }
+
+    .pillars { display:grid; grid-template-columns:repeat(4,1fr); overflow:hidden; margin-top:48px; border:1px solid rgba(74,27,122,.11); border-radius:17px; background:rgba(255,255,255,.58); box-shadow:0 20px 60px rgba(43,13,58,.05); backdrop-filter:blur(16px); text-align:left; }
+    .pillar { min-height:94px; padding:18px; border-right:1px solid rgba(74,27,122,.10); }
+    .pillar:last-child { border:0; }
+    .pillar small { display:block; color:var(--pink); font-size:10px; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
+    .pillar strong { display:block; margin-top:7px; color:var(--plum); font-size:13px; line-height:1.35; }
+
+    footer { min-height:62px; display:flex; align-items:center; justify-content:space-between; gap:18px; border-top:1px solid rgba(74,27,122,.10); color:var(--muted); font-size:11px; }
+    footer a { color:var(--purple); font-weight:750; text-decoration:none; }
+
+    @media (max-width:760px) {
+      .shell { width:min(100% - 26px,1180px); }
+      .topbar { min-height:76px; }
+      .brand-logo { width:205px; }
+      .launch-status { padding:9px 11px; font-size:10px; }
+      .hero { min-height:auto; padding:60px 0 66px; }
+      .countdown { grid-template-columns:repeat(2,1fr); max-width:410px; }
+      .time { min-height:100px; }
+      .pillars { grid-template-columns:repeat(2,1fr); }
+      .pillar:nth-child(2) { border-right:0; }
+      .pillar:nth-child(-n+2) { border-bottom:1px solid rgba(74,27,122,.10); }
+      footer { padding:20px 0; flex-direction:column; justify-content:center; text-align:center; }
+    }
+
+    @media (max-width:480px) {
+      .launch-status span { display:none; }
+      .actions { align-items:stretch; }
+      .btn { width:100%; }
+      .pillars { grid-template-columns:1fr; }
+      .pillar,.pillar:nth-child(2) { border-right:0; border-bottom:1px solid rgba(74,27,122,.10); text-align:center; }
+      .pillar:last-child { border-bottom:0; }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      *,*::before,*::after { animation-duration:.001ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.001ms!important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <canvas id="particles" aria-hidden="true"></canvas>
+    <div class="glow glow-a"></div>
+    <div class="glow glow-b"></div>
+    <div class="glow glow-c"></div>
+
+    <header class="shell topbar">
+      <a class="brand" href="https://kashtrix.com" aria-label="Kashtrix home">
+        <img class="brand-logo" src="logo/wide-logo.png" alt="Kashtrix" width="8345" height="1143" decoding="async">
+      </a>
+      <div class="launch-status"><span>Building the future of telecom</span></div>
+    </header>
+
+    <section class="shell hero" aria-labelledby="launch-heading">
+      <div class="hero-inner">
+        <div class="eyebrow"><b>✦</b> AI-native telecom operations</div>
+        <h1 id="launch-heading">Every system. <span>One intelligent platform.</span></h1>
+        <p class="lead">Kashtrix unifies network operations, billing, CRM, automation, analytics, and specialized AI agents—giving telecom teams one operational truth.</p>
+
+        <div class="launch-date"><i></i><time datetime="2026-07-31">Launching July 31, 2026</time><i></i></div>
+
+        <div class="countdown" aria-label="Countdown to launch">
+          <div class="time"><strong id="days">00</strong><span>Days</span></div>
+          <div class="time"><strong id="hours">00</strong><span>Hours</span></div>
+          <div class="time"><strong id="minutes">00</strong><span>Minutes</span></div>
+          <div class="time"><strong id="seconds">00</strong><span>Seconds</span></div>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="mailto:info@kashtrix.com?subject=Kashtrix%20early%20access">Request early access <span aria-hidden="true">→</span></a>
+          <a class="btn secondary" href="mailto:info@kashtrix.com">Contact our team</a>
+        </div>
+
+        <div class="pillars" aria-label="Kashtrix platform capabilities">
+          <div class="pillar"><small>Operate</small><strong>Unified OSS/BSS</strong></div>
+          <div class="pillar"><small>Automate</small><strong>Multi-vendor networks</strong></div>
+          <div class="pillar"><small>Understand</small><strong>Real-time intelligence</strong></div>
+          <div class="pillar"><small>Scale</small><strong>AI virtual staff</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="shell">
+      <span>© <span id="year"></span> Kashtrix. Every System. One Platform.</span>
+      <span><a href="mailto:info@kashtrix.com">info@kashtrix.com</a> · Kathmandu, Nepal</span>
+    </footer>
+  </main>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const launchAt = new Date("2026-07-31T00:00:00+05:45").getTime();
+      const countdown = {
+        days: document.getElementById("days"),
+        hours: document.getElementById("hours"),
+        minutes: document.getElementById("minutes"),
+        seconds: document.getElementById("seconds")
+      };
+      const pad = value => String(value).padStart(2,"0");
+
+      function updateCountdown() {
+        const remaining = Math.max(0,launchAt-Date.now());
+        countdown.days.textContent = pad(Math.floor(remaining/864e5));
+        countdown.hours.textContent = pad(Math.floor(remaining%864e5/36e5));
+        countdown.minutes.textContent = pad(Math.floor(remaining%36e5/6e4));
+        countdown.seconds.textContent = pad(Math.floor(remaining%6e4/1e3));
+      }
+
+      updateCountdown();
+      window.setInterval(updateCountdown,1000);
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const canvas = document.getElementById("particles");
+      const context = canvas.getContext("2d");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const palette = ["#2B0D3A","#4A1B7A","#76549A","#E11D72","#D9C8F2"];
+      let particles = [];
+      let width = 0;
+      let height = 0;
+
+      function resize() {
+        const ratio = Math.min(window.devicePixelRatio||1,2);
+        width = canvas.parentElement.clientWidth;
+        height = canvas.parentElement.clientHeight;
+        canvas.width = Math.round(width*ratio);
+        canvas.height = Math.round(height*ratio);
+        canvas.style.width = width+"px";
+        canvas.style.height = height+"px";
+        context.setTransform(ratio,0,0,ratio,0,0);
+        const count = Math.max(32,Math.min(78,Math.round(width/22)));
+        particles = Array.from({length:count},(_,index) => {
+          const y = index%3 ? height*(.44+Math.random()*.5) : Math.random()*height;
+          return {x:Math.random()*width,y,baseY:y,vx:(Math.random()-.5)*.16,vy:(Math.random()-.5)*.1,r:Math.random()*3.4+1.2,color:palette[Math.floor(Math.random()*palette.length)],phase:Math.random()*Math.PI*2,amplitude:Math.random()*14+4};
+        });
+      }
+
+      function drawWaves(time) {
+        context.save();
+        context.globalAlpha=.18;
+        context.lineWidth=.75;
+        const lines=width<700?18:30;
+        for(let line=0;line<lines;line+=1){
+          context.strokeStyle=line/lines>.64?"#E11D72":"#76549A";
+          context.beginPath();
+          for(let x=-40;x<=width+40;x+=14){
+            const progress=x/Math.max(width,1);
+            const y=height*.70+Math.sin(progress*Math.PI*2.35+time*.00018+line*.05)*72+Math.sin(progress*Math.PI*5.2-time*.00012)*20+line*4.5-lines*2.25;
+            x===-40?context.moveTo(x,y):context.lineTo(x,y);
+          }
+          context.stroke();
+        }
+        context.restore();
+      }
+
+      function draw(time=0) {
+        context.clearRect(0,0,width,height);
+        drawWaves(time);
+        const limit=width<700?105:145;
+        particles.forEach((particle,index) => {
+          if(!reduceMotion){
+            particle.x+=particle.vx;
+            particle.baseY+=particle.vy;
+            particle.y=particle.baseY+Math.sin(time*.0007+particle.phase)*particle.amplitude;
+          }
+          if(particle.x<-20)particle.x=width+20;
+          if(particle.x>width+20)particle.x=-20;
+          if(particle.baseY<-30)particle.baseY=height+30;
+          if(particle.baseY>height+30)particle.baseY=-30;
+
+          for(let next=index+1;next<particles.length;next+=1){
+            const other=particles[next];
+            const distance=Math.hypot(particle.x-other.x,particle.y-other.y);
+            if(distance<limit){
+              context.beginPath();
+              context.strokeStyle=`rgba(74,27,122,${(1-distance/limit)*.11})`;
+              context.lineWidth=.7;
+              context.moveTo(particle.x,particle.y);
+              context.lineTo(other.x,other.y);
+              context.stroke();
+            }
+          }
+
+          context.beginPath();
+          context.globalAlpha=particle.color==="#E11D72"?.72:.46;
+          context.fillStyle=particle.color;
+          context.arc(particle.x,particle.y,particle.r,0,Math.PI*2);
+          context.fill();
+          if(index%7===0){
+            context.beginPath();
+            context.globalAlpha=.28;
+            context.strokeStyle=particle.color;
+            context.arc(particle.x,particle.y,particle.r+5,0,Math.PI*2);
+            context.stroke();
+          }
+        });
+        context.globalAlpha=1;
+        if(!reduceMotion)window.requestAnimationFrame(draw);
+      }
+
+      window.addEventListener("resize",resize,{passive:true});
+      resize();
+      draw();
+    })();
+  </script>
+</body>
+</html>

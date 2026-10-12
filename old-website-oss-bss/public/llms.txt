@@ -1,0 +1,18 @@
+# Kashtrix AI-Native Telecom OSS/BSS Platform
+
+> Kashtrix is a unified, AI-native OSS/BSS, FreeRADIUS AAA, and Carrier-Grade Syslog CGNAT compliance platform designed for ISPs, WISPs, FTTH operators, and telecom providers.
+
+## Core Capabilities
+- **BSS Core**: Subscriber Billing, CRM, Prepaid/Postpaid Plans, Automated Dunning, Multi-Tenant Reseller Accounting.
+- **OSS Core**: FreeRADIUS AAA, GPON OLT Provisioning (Huawei, ZTE, FiberHome, V-SOL), BNG Routing, TR-069 ACS Server, Fiber GIS Mapping.
+- **Carrier Syslog & CGNAT**: 100,000+ EPS Log Collector, Subsecond Subpoena Query Engine, SHA-256 HMAC Tamper-Proof Archiving.
+- **AI NOC & Agents**: Autonomous AI Employees for Ticket Isolation, Device Command Generation, Model Context Protocol (MCP) Server.
+
+## Key URLs
+- Homepage: https://kashtrix.com/
+- OSS Software: https://kashtrix.com/oss
+- BSS Software: https://kashtrix.com/bss
+- Carrier Syslog: https://kashtrix.com/syslog
+- AI Agents: https://kashtrix.com/ai-agents
+- Documentation: https://kashtrix.com/documentation
+- Official Contact: info@kashtrix.com
