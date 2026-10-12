@@ -30,6 +30,6 @@ RUN sed -i 's/\r$//' /app/docker-entrypoint.sh && chmod +x /app/docker-entrypoin
 ENV PORT=3077
 ENV HOSTNAME="0.0.0.0"
 
-EXPOSE 3077 3001
+EXPOSE 3077
 
 ENTRYPOINT ["/app/docker-entrypoint.sh"]

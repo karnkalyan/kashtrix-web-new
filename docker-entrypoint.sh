@@ -15,6 +15,6 @@ npx prisma db push --skip-generate --accept-data-loss || echo "Notice: Database 
 echo "==> [2/3] Seeding website content, settings & AI knowledge base..."
 npx tsx src/lib/runSeed.ts || echo "Notice: Seeding completed."
 
-# 3. Start Next.js production server
-echo "==> [3/3] Launching Next.js server on port ${PORT:-3077}..."
-exec npm run start -- -p "${PORT:-3077}" -H "${HOSTNAME:-0.0.0.0}"
+# 3. Start Next.js production server with unified WebSocket on the same port
+echo "==> [3/3] Launching Kashtrix server on port ${PORT:-3077}..."
+exec node server.js

@@ -119,9 +119,8 @@ export default function AdminLiveChatPage() {
     let ws: WebSocket | null = null;
     try {
       const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-      const host = window.location.hostname || "localhost";
-      const port = process.env.NEXT_PUBLIC_WS_PORT || "3001";
-      ws = new WebSocket(`${protocol}//${host}:${port}`);
+      const host = window.location.host;
+      ws = new WebSocket(`${protocol}//${host}/ws`);
       wsRef.current = ws;
 
       ws.onopen = () => {

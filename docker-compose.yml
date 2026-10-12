@@ -16,7 +16,6 @@ services:
       ADMIN_KEY: "kashtrix-admin"
     ports:
       - "3077:3077"
-      - "3001:3001"
     extra_hosts:
       - host.docker.internal:host-gateway
     volumes:
