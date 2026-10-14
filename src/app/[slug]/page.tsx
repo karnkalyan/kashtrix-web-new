@@ -8,7 +8,7 @@ import { MotionReveal } from "@/components/MotionReveal";
 import { InlineCTA } from "@/components/InlineCTA";
 import { SITE } from "@/lib/site";
 
-export function generateStaticParams(){ return telecomPages.filter(p=>p.slug!=="platform").map(p=>({slug:p.slug})); }
+export function generateStaticParams(){ return telecomPages.filter(p=>p.slug!=="platform" && p.slug!=="syslog" && p.slug!=="industries").map(p=>({slug:p.slug})); }
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{
   const {slug}=await params; const p=telecomPages.find(x=>x.slug===slug); if(!p)return{};
   return {title:`${p.title.replace(/\.$/,"")} ${p.highlight.replace(/\.$/,"")}`,description:p.description,keywords:p.keywords,alternates:{canonical:`/${p.slug}`},openGraph:{title:`${p.title} ${p.highlight}`,description:p.description,images:[p.image]}};

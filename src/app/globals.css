@@ -15,6 +15,27 @@
   --pink: #d63474;
   --green: #168765;
   --shadow: 0 22px 65px rgba(39, 20, 47, 0.10);
+
+  /* Surface & typography tokens for tools & technical sections */
+  --page-bg: #fcfbfc;
+  --surface-1: #ffffff;
+  --surface-2: #f9f6fc;
+  --surface-3: #f4eff8;
+  --surface-4: #eee7f3;
+  --surface-purple: #f7f2fb;
+  --surface-pink: #fff3f8;
+  --surface-elevated: #ffffff;
+  --surface-overlay: rgba(255, 255, 255, 0.94);
+  --text-primary: #171219;
+  --text-secondary: #6f6972;
+  --text-link: #4b1b63;
+  --text-link-hover: #d63474;
+  --text-accent: #d63474;
+  --border-default: #e7e2e8;
+  --border-subtle: #f0eaf4;
+  --border-strong: #d7c9e0;
+  --border-brand: #bfa6d4;
+  --focus-border: #4b1b63;
 }
 
 :root.dark,
@@ -31,6 +52,27 @@
   --pink: #a855f7;
   --green: #34d399;
   --shadow: 0 22px 65px rgba(22, 4, 33, 0.65);
+
+  /* Surface & typography tokens for tools & technical sections (Dark) */
+  --page-bg: #12051c;
+  --surface-1: #170724;
+  --surface-2: #1f0b2f;
+  --surface-3: #260d3a;
+  --surface-4: #2f1047;
+  --surface-purple: #230d35;
+  --surface-pink: #2e0e37;
+  --surface-elevated: #1a0828;
+  --surface-overlay: rgba(23, 7, 36, 0.94);
+  --text-primary: #fbf7fc;
+  --text-secondary: #bdaec4;
+  --text-link: #c084fc;
+  --text-link-hover: #f472b6;
+  --text-accent: #c084fc;
+  --border-default: #3d1653;
+  --border-subtle: #2d103e;
+  --border-strong: #5a227b;
+  --border-brand: #792b9e;
+  --focus-border: #c084fc;
 }
 
 * {

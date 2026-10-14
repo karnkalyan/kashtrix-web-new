@@ -24,11 +24,13 @@ import {
   CheckCircle2,
   Settings2,
   MessageSquare,
+  Globe,
 } from "lucide-react";
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/chat", label: "Live Support & AI", icon: MessageSquare },
+  { href: "/admin/seo", label: "Page SEO & Meta", icon: Globe },
   { href: "/admin/webmail", label: "Webmail", icon: Mail },
   { href: "/admin/inquiries", label: "Contact Inquiries", icon: Inbox },
   { href: "/admin/email", label: "Email Setup (SMTP)", icon: Settings2 },

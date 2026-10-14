@@ -64,7 +64,15 @@ export const broadcastApps = [
     "keywords": [
       "playout",
       "master control playout & compositor engine",
-      "broadcast automation software",
+      "playout software",
+      "broadcast playout software",
+      "24/7 channel playout",
+      "television playout server",
+      "sdi playout server",
+      "ndi playout software",
+      "automated playout system",
+      "linear playout engine",
+      "scte-35 digital ad insertion playout",
       "Kashtrix broadcast playout"
     ]
   },
@@ -134,8 +142,16 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "transmission",
-      "transmission & multi-protocol output",
+      "output",
+      "broadcast output engine",
+      "transmission server",
+      "12g sdi playout card",
+      "blackmagic decklink playout",
+      "ndi 6 output engine",
+      "srt live broadcast streaming",
+      "dvb ts udp multicast",
+      "dvb mpts output",
+      "ip video transmission engine",
       "broadcast automation software",
       "Kashtrix broadcast playout"
     ]
@@ -219,13 +235,18 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "graphics",
-      "visual motion cg & graphic template designer",
-      "coming up next broadcast overlays",
-      "weather api automation graphics",
-      "back in commercial break countdown",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "cg designer",
+      "character generator software",
+      "broadcast cg software",
+      "on-air graphics system",
+      "broadcast lower thirds designer",
+      "motion graphics template designer",
+      "coming up promo generator",
+      "weather api graphics",
+      "news ticker software",
+      "election graphics system",
+      "html5 broadcast graphics",
+      "Kashtrix CG editor"
     ]
   },
   {
@@ -270,10 +291,13 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "on-air cg",
-      "live on-air character generator control surface",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "cg controller",
+      "live on-air graphics controller",
+      "lower thirds switcher",
+      "preview program graphics take",
+      "live rundown graphics controller",
+      "broadcast graphics trigger",
+      "Kashtrix CG controller"
     ]
   },
   {
@@ -314,10 +338,14 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "automation",
-      "channel master automation & matrix switching",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "controller",
+      "broadcast channel controller",
+      "master control switcher",
+      "video router control panel",
+      "broadcast failover matrix",
+      "n+1 redundancy controller",
+      "multi-channel broadcast switcher",
+      "Kashtrix channel controller"
     ]
   },
   {
@@ -363,10 +391,13 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "rundown",
-      "broadcast rundown & playlist management",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "broadcast playlist editor",
+      "broadcast rundown software",
+      "as-run log generator",
+      "hard start timed events",
+      "scte-35 commercial scheduler",
+      "broadcast automation playlist",
+      "Kashtrix playlist editor"
     ]
   },
   {
@@ -410,10 +441,13 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "scheduling",
-      "long-term programming & commercial traffic",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "broadcast scheduler software",
+      "24/7 television traffic software",
+      "epg generator",
+      "broadcast programming grid",
+      "commercial ad traffic scheduler",
+      "linear tv scheduling engine",
+      "Kashtrix scheduler"
     ]
   },
   {
@@ -457,10 +491,14 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "mam",
-      "media asset management & catalog system",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "media server",
+      "broadcast media server",
+      "media asset management mam software",
+      "broadcast video server",
+      "proxy video generator",
+      "deep archive media server",
+      "hierarchical storage management hsm",
+      "Kashtrix MAM"
     ]
   },
   {
@@ -498,10 +536,11 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "media ops",
-      "media explorer & rapid ingest",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "media ingest manager",
+      "hot folder video watcher",
+      "sha-256 file checksum verification",
+      "automated video transcode drop",
+      "broadcast file transfer"
     ]
   },
   {
@@ -546,9 +585,14 @@ export const broadcastApps = [
     ],
     "keywords": [
       "ingest",
-      "live multi-channel ingest & recording server",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "broadcast ingest server",
+      "sdi video capture software",
+      "multi-channel video recorder",
+      "growing file ingest",
+      "mxf prores video capture",
+      "scheduled vtr ingest",
+      "crash recording software",
+      "Kashtrix ingest server"
     ]
   },
   {
@@ -589,10 +633,12 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "input hub",
-      "live video hub & baseband ingest matrix",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "broadcast input engine",
+      "sdi hdmi frame sync",
+      "ndi live video acquisition",
+      "srt low latency receiver",
+      "de-interlacer broadcast",
+      "signal acquisition matrix"
     ]
   },
   {
@@ -634,10 +680,12 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "quality",
-      "automated broadcast quality control",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "broadcast qc software",
+      "ebu r128 loudness normalizer",
+      "itu bs1770 audio true peak",
+      "freeze frame black detection",
+      "automated file quality check",
+      "a/v sync validator"
     ]
   },
   {
@@ -679,10 +727,12 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "multiview",
-      "broadcast monitoring wall & tile mosaic",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "broadcast multiviewer software",
+      "ndi sdi multiview mosaic",
+      "low latency confidence monitor",
+      "audio ppm vu meters",
+      "broadcast tally signaling",
+      "studio multiviewer"
     ]
   },
   {
@@ -729,10 +779,11 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "newsroom",
-      "newsroom computer system integration (mos 2.8.4)",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "nrcs newsroom computer system",
+      "mos protocol 2.8.4 newsroom",
+      "newsroom rundown synchronizer",
+      "prompter script integration",
+      "broadcast newsroom software"
     ]
   },
   {
@@ -777,10 +828,11 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "prompter",
-      "broadcast studio teleprompter",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "broadcast teleprompter software",
+      "newsroom prompter scroll",
+      "optical mirror teleprompter",
+      "foot pedal script controller",
+      "studio teleprompter"
     ]
   },
   {
@@ -820,10 +872,11 @@ export const broadcastApps = [
       }
     ],
     "keywords": [
-      "ha",
-      "high availability & redundancy controller",
-      "broadcast automation software",
-      "Kashtrix broadcast playout"
+      "broadcast high availability controller",
+      "1+1 playout redundancy",
+      "seamless playout failover",
+      "heartbeat state mirror",
+      "n+1 playout redundancy"
     ]
   }
 ] as const;

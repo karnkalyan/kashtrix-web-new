@@ -6,10 +6,10 @@ import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 
 const groups = [
-  { title: "Products", links: [["Broadcast Playout","/broadcast-playout"],["StreamOps","/streamops"],["Kashtrix Studio","/studio"],["OSS / BSS","/platform"]] },
-  { title: "Solutions", links: [["Master Control","/broadcast-playout/master-control-playout"],["Live Transcoding","/streamops/live-transcoding"],["News & Graphics","/broadcast-playout/nrcs"],["Network Automation","/network-automation"]] },
-  { title: "OSS / BSS", links: [["Operations Support","/oss"],["Business Support","/bss"],["Billing & Revenue","/billing"],["CRM & Subscriber Care","/crm"],["Inventory","/inventory"]] },
-  { title: "Company", links: [["About","/about"],["Resources","/resources"],["Security","/security"],["Compliance","/compliance"],["Contact","/contact"]] },
+  { title: "Products", links: [["Broadcast Playout","/broadcast-playout"],["StreamOps","/streamops"],["Kashtrix Studio","/studio"],["OSS / BSS Platform","/platform"],["Carrier Syslog","/syslog"]] },
+  { title: "Solutions", links: [["Master Control","/broadcast-playout/master-control-playout"],["Live Transcoding","/streamops/live-transcoding"],["ISP Solutions Hub","/solutions"],["Network Automation","/network-automation"],["OLT Provisioning","/solutions/olt-provisioning"]] },
+  { title: "OSS / BSS", links: [["Operations Support","/oss"],["Business Support","/bss"],["Billing & Revenue","/billing"],["CRM & Subscriber Care","/crm"],["Free ISP Tools (17)","/tools"]] },
+  { title: "Company", links: [["About Us","/about"],["Resources & Guides","/resources"],["Documentation PDF","/documentation"],["Compare vs Splynx","/compare/kashtrix-vs-splynx"],["Pricing & TCO","/pricing"],["Contact","/contact"]] },
 ] as const;
 
 export function Footer() {

@@ -4,19 +4,21 @@ import { broadcastApps } from "@/data/broadcast";
 import { BroadcastApplicationExperience } from "@/components/BroadcastApplicationExperience";
 import { SITE } from "@/lib/site";
 
+import { getPageMetadata } from "@/lib/meta";
+
 export function generateStaticParams(){ return broadcastApps.map(app => ({ slug: app.slug })); }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const app = broadcastApps.find(a => a.slug === slug);
   if (!app) return {};
-  return {
-    title: `${app.title} — Broadcast Software`,
+  return getPageMetadata(`/broadcast-playout/${app.slug}`, {
+    title: `${app.title} — Television Broadcast Software | Kashtrix`,
     description: app.purpose,
-    keywords: [...app.keywords],
-    alternates: { canonical: `/broadcast-playout/${app.slug}` },
-    openGraph: { title: `${app.title} | Kashtrix`, description: app.purpose, images: [{ url: app.screenshots[0], alt: `${app.title} interface` }] },
-  };
+    keywords: app.keywords.join(", "),
+    canonical: `https://kashtrix.com/broadcast-playout/${app.slug}`,
+    ogImage: app.screenshots[0],
+  });
 }
 
 export default async function BroadcastApplicationPage({ params }: { params: Promise<{ slug: string }> }) {

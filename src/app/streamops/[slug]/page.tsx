@@ -8,10 +8,17 @@ import { MotionReveal } from "@/components/MotionReveal";
 import { InlineCTA } from "@/components/InlineCTA";
 import { SITE } from "@/lib/site";
 
+import { getPageMetadata } from "@/lib/meta";
+
 export function generateStaticParams(){return streamOpsModules.map(m=>({slug:m.slug}))}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{
   const {slug}=await params; const m=streamOpsModules.find(x=>x.slug===slug); if(!m)return{};
-  return {title:`${m.title} — StreamOps`,description:m.description,alternates:{canonical:`/streamops/${m.slug}`},openGraph:{title:`${m.title} | Kashtrix StreamOps`,description:m.description,images:[m.screenshot ?? "/og.svg"]}};
+  return getPageMetadata(`/streamops/${m.slug}`, {
+    title: `${m.title} — StreamOps Media Operations | Kashtrix`,
+    description: m.description,
+    keywords: `${m.title}, live transcoder, broadcast video transcoder, streamops, DVB MPTS multiplexer, Kashtrix StreamOps, NVENC hardware acceleration`,
+    canonical: `https://kashtrix.com/streamops/${m.slug}`,
+  });
 }
 
 const accents=["#5d48b9","#7d3b8f","#c14f6f","#317e8f","#b16625","#4f64af","#8a4da0","#2e7a6a","#3f6f8d","#886a2c","#6a588f","#4c7c67"];

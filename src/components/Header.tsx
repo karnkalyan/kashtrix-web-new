@@ -15,14 +15,14 @@ const productColumns = [
   { title: "Broadcast Playout", href: "/broadcast-playout", icon: RadioTower, links: [["Suite Overview","/broadcast-playout"],["Master Control","/broadcast-playout/master-control-playout"],["Graphics & CG","/broadcast-playout/cg-editor"],["Automation & Scheduling","/broadcast-playout/scheduler"],["Monitoring & Multiview","/broadcast-playout/multiview"]] },
   { title: "StreamOps", href: "/streamops", icon: Waypoints, links: [["Live Ingest & Capture","/streamops/ingest-recording"],["Transcoding & ABR","/streamops/live-transcoding"],["DVB MPTS","/streamops/mpts-multiplexing"],["Recording & Archive","/streamops/recording-storage"],["Monitoring & QoS","/streamops/telemetry-snmp"]] },
   { title: "Kashtrix Studio", href: "/studio", icon: Monitor, links: [["Studio Overview","/studio"],["Studio Controller","/broadcast-playout/channel-controller"],["Multiviewer","/broadcast-playout/multiview"],["CG & Graphics","/broadcast-playout/cg-controller"],["Prompter","/broadcast-playout/prompter"]] },
-  { title: "OSS / BSS", href: "/platform", icon: Database, links: [["Platform Overview","/platform"],["Operations Support","/oss"],["Business Support","/bss"],["Billing & Revenue","/billing"],["CRM & Subscriber Care","/crm"]] },
-  { title: "Support & Resources", href: "/resources", icon: BookOpen, links: [["Resources","/resources"],["Security","/security"],["Compliance","/compliance"],["Contact","/contact"],["Request Demo","/request-demo"]] },
+  { title: "OSS / BSS", href: "/platform", icon: Database, links: [["Platform Overview","/platform"],["Operations Support","/oss"],["Business Support","/bss"],["Billing & Revenue","/billing"],["CRM & Subscriber Care","/crm"],["Free ISP Tools Hub","/tools"]] },
+  { title: "Support & Resources", href: "/resources", icon: BookOpen, links: [["Guides & Whitepapers","/resources"],["Documentation PDF","/documentation"],["Compare vs Splynx","/compare/kashtrix-vs-splynx"],["Pricing & TCO","/pricing"],["Contact","/contact"],["Request Demo","/request-demo"]] },
 ] as const;
 
 const solutionColumns = [
   { title:"Broadcast Operations", links:[["24/7 Linear Playout","/broadcast-playout"],["Newsroom & Graphics","/broadcast-playout/nrcs"],["Live Production","/studio"],["Media Ingest","/broadcast-playout/ingest-server"]] },
   { title:"Media Infrastructure", links:[["Live Transcoding","/streamops/live-transcoding"],["DVB Multiplexing","/streamops/mpts-multiplexing"],["Recording & Archive","/streamops/ingest-recording"],["IP Distribution","/streamops/networking-ha"]] },
-  { title:"Telecom Operations", links:[["OSS / BSS Platform","/platform"],["Network Management","/network-management"],["Network Automation","/network-automation"],["Inventory & Field Ops","/inventory"]] },
+  { title:"Telecom Operations", links:[["OSS / BSS Platform","/platform"],["Carrier Syslog & CGNAT","/syslog"],["ISP Solutions Hub","/solutions"],["Network Management","/network-management"],["Free ISP Tools (17)","/tools"]] },
 ] as const;
 
 const industries = [
@@ -103,7 +103,7 @@ export function Header() {
 
       {open === "industries" && <div className="mega-menu-shell"><div className="grid grid-cols-4 gap-px bg-[#ece6ed] dark:bg-white/10">{industries.map(([Icon,title,text,href])=><Link href={href} key={title} className="swipe-card bg-white dark:bg-[#170724] p-6 transition hover:bg-[#fff9fc] dark:hover:bg-[#230d35]"><Icon className="h-5 w-5 text-[#6f2b8f] dark:text-[#c084fc]"/><h3 className="mt-4 text-sm font-semibold text-[#171219] dark:text-white">{title}</h3><p className="mt-2 text-xs leading-5 text-[#756e77] dark:text-[#bdaec4]">{text}</p></Link>)}</div></div>}
 
-      {open === "mobile" && <div className="swipe-card absolute inset-x-0 top-[68px] z-[81] border-t border-[#e9e5ea] dark:border-white/10 bg-white dark:bg-[#170724] p-5 shadow-[0_24px_60px_rgba(35,18,42,.12)] lg:hidden"><div className="grid gap-1 text-sm font-medium">{[["Broadcast Playout","/broadcast-playout"],["StreamOps","/streamops"],["Kashtrix Studio","/studio"],["OSS / BSS","/platform"],["Resources","/resources"],["Company","/about"]].map(([label,href])=><Link key={href} href={href} className="border-b border-[#eee9ef] dark:border-white/10 py-3 text-[#171219] dark:text-white">{label}</Link>)}<Link href="/request-demo" className="mt-3 bg-[#4b1b63] dark:bg-[#6f2b8f] px-4 py-3 text-center text-white">Request demo</Link></div></div>}
+      {open === "mobile" && <div className="swipe-card absolute inset-x-0 top-[68px] z-[81] border-t border-[#e9e5ea] dark:border-white/10 bg-white dark:bg-[#170724] p-5 shadow-[0_24px_60px_rgba(35,18,42,.12)] lg:hidden"><div className="grid gap-1 text-sm font-medium">{[["Broadcast Playout","/broadcast-playout"],["StreamOps","/streamops"],["Kashtrix Studio","/studio"],["OSS / BSS","/platform"],["Solutions","/solutions"],["Free ISP Tools","/tools"],["Resources","/resources"],["Company","/about"]].map(([label,href])=><Link key={href} href={href} className="border-b border-[#eee9ef] dark:border-white/10 py-3 text-[#171219] dark:text-white">{label}</Link>)}<Link href="/request-demo" className="mt-3 bg-[#4b1b63] dark:bg-[#6f2b8f] px-4 py-3 text-center text-white">Request demo</Link></div></div>}
     </header>
   );
 }
